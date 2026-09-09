@@ -1,0 +1,27 @@
+{
+  "name": "npm-template-monorepo",
+  "version": "0.1.0",
+  "description": "TBD",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wspittman/npm-template.git"
+  },
+  "author": "William Pittman",
+  "homepage": "https://github.com/wspittman/npm-template#readme",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "clean": "git clean -fdx -- \":(glob)**/node_modules/**\" \":(glob)**/deploy/**\" \":(glob)**/dist/**\" \":(glob)**/*.tsbuildinfo\"",
+    "lint": "npm run lint --workspaces",
+    "format": "npm run format --workspaces -- --log-level silent",
+    "test": "npm run test --workspaces",
+    "pre-checkin": "node scripts/checklist.mjs",
+    "pre-deploy": "node scripts/checklist.mjs -- full",
+    "build": "npm run build --workspaces"
+  },
+  "license": "MIT"
+}

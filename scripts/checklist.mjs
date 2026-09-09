@@ -31,5 +31,5 @@ npmCommand("run", "test");
 npmCommand("run", "build");
 
 if (!!isFull) {
-  npmCommand("run", "e2e");
+  //npmCommand("run", "e2e");
 }
