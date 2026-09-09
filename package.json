@@ -1,0 +1,39 @@
+{
+  "name": "npm-template",
+  "version": "0.1.0",
+  "description": "TBD",
+  "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wspittman/npm-template.git"
+  },
+  "author": "William Pittman",
+  "homepage": "https://github.com/wspittman/npm-template#readme",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "clean": "git clean -fdx -- \":(glob)**/node_modules/**\" \":(glob)**/deploy/**\" \":(glob)**/dist/**\" \":(glob)**/*.tsbuildinfo\"",
+    "lint": "eslint",
+    "format": "prettier . --write --log-level silent",
+    "test": "node --import tsx --test --test-reporter=dot test/**/*.test.ts",
+    "test-details": "node --import tsx --test test/**/*.test.ts",
+    "build": "tsc -p tsconfig.json",
+    "pre-checkin": "node scripts/checklist.mjs",
+    "pre-deploy": "node scripts/checklist.mjs -- full",
+    "dev": "tsx --env-file=.env src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.10.0",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.0.0",
+    "prettier": "^3.7.4",
+    "tsx": "^4.23.1",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-eslint": "^8.67.0"
+  },
+  "license": "MIT"
+}

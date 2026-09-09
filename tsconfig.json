@@ -1,0 +1,57 @@
+{
+  // References
+  // https://tduyng.com/blog/tsconfig-options-you-should-use/
+  // https://2ality.com/2025/01/tsconfig-json.html
+  // https://github.com/tsconfig/bases
+
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    // [Environment Dependent]
+    // Node 24 App/Lib: es2024, NodeNext, NodeNext
+    // Browser App    : es2023, esnext, node
+    "target": "es2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    // [Library Only] Emitting .d.ts files
+    "declaration": true,
+    "declarationMap": true,
+    "isolatedDeclarations": true,
+
+    // [Node Only] Don't allow non-JS constructs, including JSX
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+
+    // Perf improvements
+    "incremental": true,
+    "skipLibCheck": true,
+
+    // Debugging
+    "sourceMap": true,
+
+    // Code Quality
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitOverride": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    // Record treats accessed values as potentially undefined
+    "noUncheckedIndexedAccess": true,
+
+    // Type declarations
+    "types": ["node"],
+
+    // Interoperability
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
