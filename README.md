@@ -4,11 +4,16 @@ A template with my standard starting point when making npm-based repositories
 
 ## Post-Instantiation
 
-If creating a monorepo, create individual packages under `packages/` and replace the root-level package.json with `alt/monorepo.package.json`
-
-package.json: Update name, references, and description
+Update this readme, removing post-installation items as you do them.
 
 If developing in codex cloud, follow the skills installation instructions from https://github.com/wspittman/agent-skills#codex-cloud
+
+`package.json`
+
+- If creating a monorepo, create individual packages under `packages/` and replace the root-level package.json with `alt/monorepo.package.json`
+- Update name, references, and description
+
+Delete `alt/` folder once you've taken anything you need from it.
 
 ### Library
 
@@ -58,7 +63,12 @@ If developing in codex cloud, follow the skills installation instructions from h
 
 ### Frontend
 
-`tsconfig.json`: replace with `alt/vite.tsconfig.jsonc
+Replace from `alt/` folder:
+
+- `alt/vite.tsconfig.jsonc` -> `tsconfig.json`
+- `alt/vitest.config.ts.md` -> `vitest.config.ts` (remove wrapper ticks)
+- `alt/vite.config.ts.md` -> `vite.config.ts` (remove wrapper ticks)
+- `alt/index.html` -> `src/index.html`
 
 `package.json`: Add new dependencies and replace scripts
 
