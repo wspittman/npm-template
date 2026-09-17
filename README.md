@@ -8,46 +8,41 @@ Update this readme, removing post-installation items as you do them.
 
 If developing in codex cloud, follow the skills installation instructions from https://github.com/wspittman/agent-skills#codex-cloud
 
-`package.json`
+Delete `alt/` folder once you've taken anything you need from it.
+
+### package.json
 
 - If creating a monorepo, create individual packages under `packages/` and replace the root-level package.json with `alt/monorepo.package.json`
 - Update name, references, and description
 
-Delete `alt/` folder once you've taken anything you need from it.
-
-### Library
-
-`package.json`
+#### If Library
 
 ```json
 "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist"
-  ],
+"main": "./dist/index.js",
+"module": "./dist/index.js",
+"types": "./dist/index.d.ts",
+"exports": {
+  ".": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "default": "./dist/index.js"
+  }
+},
+"files": [
+  "dist"
+],
 ```
 
-### CLI
+If intended to be a wide-support library, also update
 
-`tsconfig.json`
+```json
+"engines": {
+"node": ">=20"
+},
+```
 
-- Delete `[Library Only]` section
-- Add `"noEmit": true,`
-
-### Backend
-
-`tsconfig.json`: delete `[Library Only]` section
-
-`package.json`: Add new dependencies
+#### If Express Server
 
 ```json
   "dependencies": {
@@ -61,16 +56,7 @@ Delete `alt/` folder once you've taken anything you need from it.
   }
 ```
 
-### Frontend
-
-Replace from `alt/` folder:
-
-- `alt/vite.tsconfig.jsonc` -> `tsconfig.json`
-- `alt/vitest.config.ts.md` -> `vitest.config.ts` (remove wrapper ticks)
-- `alt/vite.config.ts.md` -> `vite.config.ts` (remove wrapper ticks)
-- `alt/index.html` -> `src/index.html`
-
-`package.json`: Add new dependencies and replace scripts
+#### If Frontend Client
 
 ```json
 "scripts" {
@@ -87,6 +73,20 @@ Replace from `alt/` folder:
   "jsdom": "^30.0.1",
   "vite": "^8.0.8",
   "vite-plugin-compression2": "^2.3.1",
-  "vitest": "^4.1.0"
+  "vitest": "^5.0.0"
 }
 ```
+
+### tsconfig.base.json
+
+- Update to the correct `[Environment Dependent]` options.
+- Update the `[Library Only]`, `[Node Only]`, `[CLI Only]` sections as appropriate
+
+### Frontend
+
+Replace from `alt/` folder:
+
+- `alt/vite.tsconfig.jsonc` -> `tsconfig.base.json`
+- `alt/vitest.config.ts.md` -> `vitest.config.ts` (remove wrapper ticks)
+- `alt/vite.config.ts.md` -> `vite.config.ts` (remove wrapper ticks)
+- `alt/index.html` -> `src/index.html`

@@ -11,7 +11,7 @@
   "author": "William Pittman",
   "homepage": "https://github.com/wspittman/npm-template#readme",
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=24"
   },
   "scripts": {
     "clean": "git clean -fdx -- \":(glob)**/node_modules/**\" \":(glob)**/deploy/**\" \":(glob)**/dist/**\" \":(glob)**/*.tsbuildinfo\"",

@@ -24,6 +24,7 @@ Development Non-goals
 - Take a step back and consider if the changes solve the right problem.
 - If you are working with or from a plan, review to ensure that the plan files are structured correctly and up to date.
 - Ensure error cases are handled gracefully, predictably, and provide enough information for future maintainers.
+- If you are Codex Cloud, your harness will not allow you to commit binary files. This usually bites us with attempts to provide visual proof artifacts. You may create such files for your own review, but DO NOT attempt to include them in the committed patch.
 - Always run `npm run pre-checkin` before committing code or handing back for human review. This does not apply to plan- or document-only changes.
 
 ## Important Commands
