@@ -90,3 +90,5 @@ Replace from `alt/` folder:
 - `alt/vitest.config.ts.md` -> `vitest.config.ts` (remove wrapper ticks)
 - `alt/vite.config.ts.md` -> `vite.config.ts` (remove wrapper ticks)
 - `alt/index.html` -> `src/index.html`
+
+Add favicon files. See https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
